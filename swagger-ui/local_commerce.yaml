@@ -1,0 +1,1550 @@
+# These are the APIs that are availabe for Vendor to integrate with BTPN wow. 
+# Vendor Onboarding and Account creation is a prerequisite to use these APIs
+
+swagger: '2.0'
+basePath: /vendor-x.com/v1/local-commerce
+schemes:
+  - https
+info:
+  version: "0.0.1"
+  title: "Local Commerce APIs"
+  description: "These are APIs under Local Commerce"
+        
+
+paths:
+#-----------------------------------------------------------------IMAGE--------------------------------------------------------------------------#            
+  /image:
+    post:
+      description: "Creates a new image with basic image information"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: Image
+          description: Basic information
+          required: true
+          schema:
+            $ref: '#/definitions/Image'
+          
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Image'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+
+    get:
+      description: "This resorce lets you get the image"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - required: true
+          in: query
+          name: image_id
+          type: string
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Image'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+    put:
+      description: "This resorce lets you update the image"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: image
+          description: Full image information
+          required: true
+          schema:
+            $ref: '#/definitions/Image'
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Image'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+            
+    delete:
+      description: "This deletes image only if there are no image - product associations"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: query
+          name: image_id
+          type: string
+          required: true
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+#-----------------------------------------------------------------Category--------------------------------------------------------------------------#            
+  /category:
+    post:
+      description: "Creates a new Category with basic Category information"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: Category
+          description: Basic information
+          required: true
+          schema:
+            $ref: '#/definitions/Category'
+          
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Category'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+
+    get:
+      description: "This resorce lets you get the Category"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - required: true
+          in: query
+          name: category_id
+          type: string
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Category'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+    put:
+      description: "This resorce lets you update the Category"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: Category
+          description: Full Category information
+          required: true
+          schema:
+            $ref: '#/definitions/Category'
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Category'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+            
+    delete:
+      description: "This deletes Category only if there are no Category - product associations"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: query
+          name: category_id
+          type: string
+          required: true
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'          
+#-----------------------------------------------------------------Collection--------------------------------------------------------------------------#            
+  /collection:
+    post:
+      description: "Creates a new Collection with basic Collection information"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: Collection
+          description: Basic information
+          required: true
+          schema:
+            $ref: '#/definitions/CollectionUpdate'
+          
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Collection'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+
+    get:
+      description: "This resorce lets you get the Collection"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - required: true
+          in: query
+          name: collection_id
+          type: string
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Collection'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+    put:
+      description: "This resorce lets you update the Collection"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: Collection
+          description: Full Collection information
+          required: true
+          schema:
+            $ref: '#/definitions/CollectionUpdate'
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Collection'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+            
+    delete:
+      description: "This deletes Collection only if there are no Collection - product associations"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: query
+          name: collection_id
+          type: string
+          required: true
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'          
+#-----------------------------------------------------------------AutoCollection--------------------------------------------------------------------------#            
+  /autoCollection:
+    post:
+      description: "Creates a new AutoCollection with basic AutoCollection information"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: AutoCollection
+          description: Basic information
+          required: true
+          schema:
+            $ref: '#/definitions/AutoCollectionUpdate'
+          
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/AutoCollection'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+
+    get:
+      description: "This resorce lets you get the AutoCollection"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - required: true
+          in: query
+          name: auto_collection_id
+          type: string
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/AutoCollection'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+    put:
+      description: "This resorce lets you update the AutoCollection"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: AutoCollection
+          description: Full AutoCollection information
+          required: true
+          schema:
+            $ref: '#/definitions/AutoCollectionUpdate'
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/AutoCollection'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+            
+    delete:
+      description: "This deletes AutoCollection"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: query
+          name: auto_collection_id
+          type: string
+          required: true
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'                           
+#-----------------------------------------------------------------VENDOR--------------------------------------------------------------------------#            
+  /vendor:
+    post:
+      description: "Creates a new vendor with basic vendor information"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: Vendor
+          description: Basic information
+          required: true
+          schema:
+            $ref: '#/definitions/Vendor'
+          
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Vendor'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+
+    get:
+      description: "This resorce lets you get the vendor"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - required: true
+          in: query
+          name: vendor_id
+          type: string
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Vendor'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+    put:
+      description: "This resorce lets you update the vendor"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: Vendor
+          description: Full vendor information
+          required: true
+          schema:
+            $ref: '#/definitions/Vendor'
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/Vendor'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+            
+    delete:
+      description: "This deletes Vendor only if there are no vendor - product associations"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: query
+          name: vendor_id
+          type: string
+          required: true
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'                   
+#-----------------------------------------------------------------------PRODUCT---------------------------------------------------------------------#  
+  /product:
+    post:
+      description: "Creates a new product with basic product information"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: Product
+          description: Basic product information
+          required: true
+          schema:
+            $ref: '#/definitions/Product'
+          
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/ProductViewObject'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+
+    get:
+      description: "This resorce lets you get the product"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - required: true
+          in: query
+          name: product_id
+          type: string
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/ProductViewObject'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+    put:
+      description: "This resorce lets you update the product"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: Product
+          description: Full product information
+          required: true
+          schema:
+            $ref: '#/definitions/ProductUpdate'
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/ProductViewObject'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+            
+    delete:
+      description: "This deletes everything including the delete product, productvarients and other product associations"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: query
+          name: product_id
+          type: string
+          required: true
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'            
+#-----------------------------------------------------------------ProductVariant--------------------------------------------------------------------------#            
+  /productVariant:
+    post:
+      description: "Creates a new ProductVariant with basic ProductVariant information"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: ProductVariant
+          description: Basic information
+          required: true
+          schema:
+            $ref: '#/definitions/ProductVariant'
+          
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/ProductVariantView'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+
+    get:
+      description: "This resorce lets you get the ProductVariant"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - required: true
+          in: query
+          name: variant_id
+          type: string
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/ProductVariantView'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+    put:
+      description: "This resorce lets you update the ProductVariant"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: body
+          name: ProductVariant
+          description: Full ProductVariant information
+          required: true
+          schema:
+            $ref: '#/definitions/ProductVariantUpdate'
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/ProductVariantView'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+            
+    delete:
+      description: "This deletes ProductVariant only if there are no ProductVariant - product associations"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: query
+          name: variant_id
+          type: string
+          required: true
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'                      
+
+#--------------------------------------------------------------------------------------------------------------------------------------------#
+  /fetchProducts:
+    get:
+      description: "Fetch Products based on multiple criteria. This is the main search production API. It queries across models"
+      produces:
+        - application/json        
+      parameters:
+        - required: true
+          in: header
+          name: Authorization
+          type: string
+        - in: query
+          name: agent_id
+          type: number
+        - in: query
+          name: customer_id
+          type: number
+        - in: query
+          name: collection_id
+          type: number
+        - in: query
+          name: vendor_id
+          type: number
+        - in: query
+          name: product_id
+          type: number
+
+
+      # Expected responses for this operation:
+      responses:
+        '200':
+          description: Successful response with status as OK
+          schema:
+            $ref: '#/definitions/FetchProductsResponse'
+        '401':
+          description: 'header invalid, expired, or not found.'
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '422':
+          description: Missing required request parameter.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+        '500':
+          description: Internal server error.
+          schema:
+            $ref: '#/definitions/GenericResponse'
+
+
+
+    
+definitions:
+  Image:
+    type: object
+    properties:
+      image_id:
+        type: number
+      src:
+        type: string
+      alt:
+        type: string
+      name:
+        type: string
+      height:
+        type: number
+      width:
+        type: number
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+
+  Vendor:
+    type: object
+    properties:
+      vendor_id:
+        type: number
+      name:
+        type: string
+      vendor_status:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+
+
+  Category:
+    type: object
+    properties:
+      category_id:
+        type: number
+      category_name:
+        type: string
+      parent_category:
+        type: string
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+
+  Product:
+    type: object 
+    properties:
+      product_id:
+        type: number
+      product_title:
+        type: string
+      product_description:
+        type: string
+      product_type:
+        type: number
+      custom_options:
+        type: object
+      tags:
+        type: string
+      published_status:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+
+
+  ProductVariant:
+    type: object
+    properties:
+      variant_id:
+        type: number
+      product_id:
+        type: number
+      variant_title: 
+        type: string
+      variant_description:
+        type: string
+      sku :
+        type: string
+      image_id:
+        type: number
+      price:
+        type: number
+      price_current:
+        type: string
+      measurement:
+        type: number
+      measurement_unit:
+        type: string
+      taxable:
+        type: boolean
+      tax_code:
+        type: number
+      shipping_required:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+
+  Collection:
+    type: object
+    properties:
+      collection_id:
+        type: number
+      url_key:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+      image:
+        $ref: '#/definitions/Image'        
+      sort_by:
+        type: string
+      published:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+
+  ProductVariantImage:
+    type: object
+    properties:
+      image_id:
+        type: number
+      product_id:
+        type: number
+      variant_id:
+        type: array
+        items:
+          type: number
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+      
+
+
+  ProductCollection:
+    type: object
+    properties:
+      collection_id:
+        type: number
+      product_id:
+        type: number
+      sort_index:
+        type: number
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+
+      
+  VendorProducts:
+    type: object
+    properties:
+      vendor_id:
+        type: number
+      product_id:
+        type: number
+      product_variant_id:
+        type: number
+      availability_status:
+        type: boolean
+      availability_status_updated_at:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+      
+
+  ProductCategory:
+    type: object
+    properties:
+      product_id:
+        type: number
+      category_id:
+        type: number
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+      
+
+  AutoCollection:
+    type: object
+    properties:      
+      auto_collection_id:
+        type: number
+      title:
+        type: string
+      description:
+        type: string        
+      url_key:
+        type: string   
+      image:
+        $ref: '#/definitions/Image'           
+      collection_rules:
+        type: object
+        properties:
+          query_param:
+            type: string
+          operator:
+            type: string
+          query_value:
+            type: string
+      match_all:
+        type: boolean
+      sort_by:
+        type: string
+      sort_order:
+        type: string
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number            
+
+
+  GenericResponse:
+    properties:
+      response_code:
+        type: number
+      response_desc:
+        type: string
+    type: object
+
+
+  ProductUpdate:
+    type: object 
+    properties:
+      product_id:
+        type: number
+      product_title:
+        type: string
+      product_description:
+        type: string
+      product_type:
+        type: number
+      product_collection:
+        type: array
+        items:
+          type: number
+      product_images:
+        type: array
+        items:
+          type: number
+      custom_options:
+        type: object
+      tage:
+        type: string
+      product_variants:
+        type: array
+        items:
+          type: number
+      product_categories:
+        type: array
+        items:
+          type: number
+      published_status:
+        type: boolean
+
+  CollectionUpdate:
+    type: object
+    properties:
+      collection_id:
+        type: number
+      url_key:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+      image_id:
+        type: number        
+      sort_by:
+        type: string
+      published:
+        type: boolean
+
+  AutoCollectionUpdate:
+    type: object
+    properties:      
+      auto_collection_id:
+        type: number
+      title:
+        type: string
+      description:
+        type: string        
+      url_key:
+        type: string   
+      image_id:
+        type: number                  
+      collection_rules:
+        type: object
+        properties:
+          query_param:
+            type: string
+          operator:
+            type: string
+          query_value:
+            type: string
+      match_all:
+        type: boolean
+      sort_by:
+        type: string
+      sort_order:
+        type: string
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number            
+
+  VendorProductsView:
+    type: object
+    properties:
+      vendor:
+        $ref: '#/definitions/Vendor'        
+      product_id:
+        type: number
+      product_variant_id:
+        type: number
+      availability_status:
+        type: boolean
+      availability_status_updated_at:
+        type: boolean
+      
+
+  VendorProductsUpdate:
+    type: object
+    properties:
+      vendor_id:
+        type: number        
+      product_id:
+        type: number
+      product_variant_id:
+        type: number
+      availability_status:
+        type: boolean
+      availability_status_updated_at:
+        type: boolean
+      
+
+
+
+  ProductVariantView:
+    type: object
+    properties:
+      variant_id:
+        type: number
+      product_id:
+        type: number
+      variant_title: 
+        type: string
+      variant_description:
+        type: string
+      sku :
+        type: string
+      image_id:
+        type: number
+      price:
+        type: number
+      price_current:
+        type: string
+      measurement:
+        type: number
+      measurement_unit:
+        type: string
+      taxable:
+        type: boolean
+      tax_code:
+        type: number
+      shipping_required:
+        type: boolean
+      product_vendors:
+        type: array
+        items:
+          $ref: '#/definitions/VendorProductsView'
+
+
+  ProductVariantUpdate:
+    type: object
+    properties:
+      variant_id:
+        type: number
+      product_id:
+        type: number
+      variant_title: 
+        type: string
+      variant_description:
+        type: string
+      sku :
+        type: string
+      image_id:
+        type: number
+      price:
+        type: number
+      price_current:
+        type: string
+      measurement:
+        type: number
+      measurement_unit:
+        type: string
+      taxable:
+        type: boolean
+      tax_code:
+        type: number
+      shipping_required:
+        type: boolean
+      product_vendors:
+        type: array
+        items:
+          $ref: '#/definitions/VendorProductsUpdate'
+
+
+  ProductViewObject:
+    type: object 
+    properties:
+      product_id:
+        type: number
+      product_title:
+        type: string
+      product_description:
+        type: string
+      product_type:
+        type: number
+      product_collection:
+        $ref: '#/definitions/Collection'
+      product_images:
+        type: array
+        items:
+          $ref: '#/definitions/Image'
+      custom_options:
+        type: object
+      tage:
+        type: string
+      product_variants:
+        type: array
+        items:
+          $ref: '#/definitions/ProductVariantView'
+      published_status:
+        type: boolean
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      created_by:
+        type: number
+      updated_by:
+        type: number
+      product_categories:
+        type: array
+        items:
+          $ref: '#/definitions/Category'
+            
+
+        
+  FetchProductsResponse:
+    type: object
+    properties:
+      products:
+        type: array
+        items:
+          $ref: '#/definitions/ProductViewObject'
+      count:
+        type: number
+     
