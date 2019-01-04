@@ -1,17 +1,20 @@
 <html>
 <head>
 	<title>OpenSource Hosted Javascript Apps</title>
-	<style>
-		table, th, td {
-		   border: 1px solid black;
-		}
-	</style>
+	<link rel="stylesheet" href="https://lib.thejeshgn.com/lib_files/datatable/media/css/jquery.dataTables.min.css">
+
+	<script src="https://lib.thejeshgn.com/lib_files/datatable/media/js/jquery.js"></script>
+	<script src="https://lib.thejeshgn.com/lib_files/datatable/media/js/jquery.dataTables.js"></script>
+
 </head>
 <body>
 <h1>OpenSource Hosted Javascript Apps</h1>
-<table style="border: 1px;">
+<table style="border: 1px;" id="unhosted_apps">
+<thead>
+	<td> App </td>
+	<td> Direct Link </td>
+</thead>
 <tr>
-	<td><a href="swagger-editor/#!/"><img src="icons/swagger.png" height="125px"/></a></td>
 	<td><a href="swagger-editor/#!/">Swagger Editor</a> Design, describe, and document your API on the first open source editor fully dedicated to OpenAPI-based APIs. The Swagger Editor is great for quickly getting started with the OpenAPI (formerly known as the Swagger Specification) specification, with support for Swagger 2.0 and OpenAPI 3.0. 
 	</td>
 	<td>
@@ -19,7 +22,6 @@
 	</td>
 </tr>
 <tr>
-	<td><a href="swagger-ui/"><img src="icons/swagger.png" height="125px"/></a></td>
 	<td><a href="swagger-ui/">Swagger UI</a> allows anyone — be it your development team or your end consumers — to visualize and interact with the API’s resources without having any of the implementation logic in place. It’s automatically generated from your OpenAPI (formerly known as Swagger) Specification, with the visual documentation making it easy for back end implementation and client side consumption.</td>
 	<td>
 		https://apps.thejeshgn.com/swagger-ui/?url=
@@ -27,7 +29,6 @@
 </tr>
 
 <tr>
-	<td><a href="drawio/"><img src="icons/drawio.png" height="125px"/></a></td>
 	<td><a href="drawio/">Draw.io</a> is a free to use online diagramming application.</td>
 	<td>
 		Needs proxy!
@@ -35,7 +36,6 @@
 </tr>
 
 <tr>
-	<td><a href="freeboard/"><img src="icons/freeboard.gif" height="125px"/></a></td>
 	<td><a href="freeboard/">FREEBOARD</a> is an open source real-time dashboard builder for IOT and other web mashups. A free open-source alternative to Geckoboard.
 	</td>
 	<td>
@@ -43,7 +43,6 @@
 	</td>
 </tr>
 <tr>
-	<td><a href="my-mind/"><img src="icons/mymind.png" height="125px"/></a></td>
 	<td><a href="my-mind/">My Mind</a> is a web application for creating and managing Mind maps. It is free to use and you can fork its source code. It is distributed under the terms of the MIT license.
 	</td>
 	<td>
@@ -51,7 +50,6 @@
 	</td>
 </tr>
 <tr>
-	<td><a href="mapshaper/"><img src="icons/mapshaper.png" height="125px"/></a></td>
 	<td><a href="mapshaper/">mapshaper</a> is a set of tools for editing Shapefile, GeoJSON, TopoJSON and CSV files . It is distributed under the terms of the MPL 2.0 license.
 	</td>
 	<td>
@@ -59,7 +57,6 @@
 	</td>
 </tr>
 <tr>
-	<td><a href="jsonlint/">jsonlint</td>
 	<td><a href="jsonlint/">jsonlint</a> A JSON parser and validator. It is distributed under the terms of the <a href="https://github.com/zaach/jsonlint">MIT License</a>.
 	</td>
 	<td>
@@ -67,20 +64,18 @@
 	</td>
 </tr>
 <tr>
-	<td><a href="json-stat-explorer/">JSON Stat Explorer</td>
 	<td><a href="json-stat-explorer/">JSON Stat Explorer</a> The JSON-stat format is a simple lightweight JSON format for data dissemination. This is an exporer for that data, the <a href="https://github.com/badosa/JSON-stat">project</a> is under Apache license,
 	</td>
 	<td>
 		https://apps.thejeshgn.com/json-stat-explorer/#/URL
 	</td>
 </tr>
-<tr>
-<td colspan=3>
-These are javascript only apps that are hosted as static files. You can host them anwhere. They can even run locally on your desktop using a local webserver. Clone this <a href="https://github.com/thejeshgn/apps">github</a> project to start.
-
-<br> <a href="https://thejeshgn.com">Thejesh GN</a>
-</td>
-</tr>	
 </table>
+These are javascript only apps that are hosted as static files. You can host them anwhere. They can even run locally on your desktop using a local webserver. Clone this <a href="https://github.com/thejeshgn/apps">github</a> project to start. <a href="https://thejeshgn.com">Thejesh GN</a>
+<script type="text/javascript">
+	$(document).ready( function () {
+    	$('#unhosted_apps').DataTable();
+	} );
+</script>
 </body>
 </html>
