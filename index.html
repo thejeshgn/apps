@@ -1,13 +1,12 @@
 <html>
 <head>
 	<title>Free and Open Source unhosted web apps</title>
-	<link rel="stylesheet" href="https://lib.thejeshgn.com/lib_files/datatable/media/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="/static/jquery.dataTables.min.css">
 
-	<script src="https://lib.thejeshgn.com/lib_files/datatable/media/js/jquery.js"></script>
-	<script src="https://lib.thejeshgn.com/lib_files/datatable/media/js/jquery.dataTables.js"></script>
-
+	<script src="/static/jquery.js"></script>
+	<script src="/static/jquery.dataTables.js"></script>
 </head>
-<body>
+<body style="width:98%;padding:30px;">
 <h1>Free and Open Source unhosted web apps</h1>
 <table style="border: 1px;" id="unhosted_apps">
 <thead>
@@ -22,7 +21,7 @@
 	</td>
 </tr>
 <tr>
-	<td><a href="swagger-ui/">Swagger UI</a> allows anyone — be it your development team or your end consumers — to visualize and interact with the API’s resources without having any of the implementation logic in place. It’s automatically generated from your OpenAPI (formerly known as Swagger) Specification, with the visual documentation making it easy for back end implementation and client side consumption.</td>
+	<td><a href="swagger-ui/">Swagger UI</a> allows anyone — be it your development team or your end consumers - to visualize and interact with the API’s resources without having any of the implementation logic in place. It’s automatically generated from your OpenAPI (formerly known as Swagger) Specification, with the visual documentation making it easy for back end implementation and client side consumption.</td>
 	<td>
 		https://apps.thejeshgn.com/swagger-ui/?url=
 	</td>
@@ -76,12 +75,32 @@
 	<td>
 		
 	</td>
-</tr>	
+</tr>
+<tr>	
+	<td><a href="svgedit/">SVG Edit</a> is a fast, web-based, JavaScript-driven SVG drawing editor that works in any modern browser.
+	</td>
+	<td>
+		&nbsp;
+	</td>
+</tr>
+<tr>
+	<td><a href="json_editor/">JSON Editor</a> JSON Editor takes a JSON Schema and uses it to generate an HTML form.
+It has full support for JSON Schema version 3 and 4 and can integrate with several popular CSS frameworks (bootstrap, foundation, and jQueryUI).
+
+
+	</td>
+	<td>
+		&nbsp;
+	</td>
+</tr>
 </table>
+
 These are javascript only apps that are hosted as static files. You can host them anwhere. They can even run locally on your desktop using a local webserver. Clone this <a href="https://github.com/thejeshgn/apps">github</a> project to start. <a href="https://thejeshgn.com">Thejesh GN</a>
 <script type="text/javascript">
 	$(document).ready( function () {
-    	$('#unhosted_apps').DataTable();
+    	$('#unhosted_apps').DataTable({
+    		"pageLength": 50
+    	});
 	} );
 </script>
 </body>
