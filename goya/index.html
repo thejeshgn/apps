@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>GoyaPixel</title>
+        <link href='https://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+        <link rel="icon" type="" href="favicon.ico">
+    </head>
+    <body class="goyaBody" oncontextmenu="return false">
+
+        <div id="leftAppColumn" class="LeftColumnContainer">
+            <div id="title"></div>
+            <div id="tools-menu" class="tools-menu"></div>
+            <div id="palette" class="PaletteContainer"></div>
+            <div id="canvas-info" class="CanvasInfoContainer"></div>
+            <div id="mainMenu" class="main-menu"></div>
+            <div id="about" class="about-info">
+                Goya is a pixel art editor built using
+                <a href="http://clojure.org/clojurescript" target="_blank">ClojureScript</a>
+                and <a href="https://github.com/swannodette/om" target="_blank">Om</a>.
+                The spiffy icons are provided by <a href="http://fontello.com/" target="_blank">Fontello</a>.
+                Gif export is made possible by via the <a href="https://github.com/jnordberg/gif.js">gif.js</a> library.
+                <p>
+                    <a href="https://github.com/jackschaedler/goya" target="_blank">Visit Goya on GitHub.</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/GoyaPixelEditor" target="_blank">Follow Goya on Twitter.</a>
+                </p>
+                <ul class="key-shortcut-list">
+                    <li class="key-shortcut"><div class="key">1</div> Brush Tool</li>
+                    <li class="key-shortcut"><div class="key">2</div> Line Tool</li>
+                    <li class="key-shortcut"><div class="key">3</div> Box Tool</li>
+                    <li class="key-shortcut"><div class="key">4</div> Fill Tool</li>
+                    <li class="key-shortcut"><div class="key">5</div> Color Picker Tool</li>
+                    <li class="key-shortcut"><div class="key">6</div> Selection/Move Tool</li>
+                    <li class="key-shortcut"><div class="key">C</div> Clear/Delete Selection</li>
+                    <li class="key-shortcut"><div class="key">G</div> Toggle Grid</li>
+                    <li class="key-shortcut"><div class="key">A</div> Add Frame</li>
+                    <li class="key-shortcut"><div class="key">D</div> Delete Frame</li>
+                    <li class="key-shortcut"><div class="key">O</div> Toggle Onion Skinning</li>
+                    <li class="key-shortcut"><div class="key">></div>/<div class="key"><</div> Next/Prev Frame</li>
+                    <li class="key-shortcut"><div class="key">Q</div>/<div class="key">W</div> Zoom Out/In</li>
+                    <li class="key-shortcut"><div class="key">CTRL</div>+<div class="key">C</div> Copy Selection</li>
+                    <li class="key-shortcut"><div class="key">CTRL</div>+<div class="key">V</div> Paste Selection</li>
+                    <li class="key-shortcut"><div class="key">CTRL</div>+<div class="key">Z</div> Undo</li>
+                    <li class="key-shortcut"><div class="key">CTRL</div>+<div class="key">Shift</div>+<div class="key">Z</div> Redo</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="cursor-pos-indicator" class="cursor-pos-indicator"></div>
+        <div id="frame-num-indicator" class="frame-num-indicator"></div>
+        <div id="grid-toggle" class="grid-toggle"></div>
+        <div id="minimap-canvas" class="minimap-canvas"></div>
+
+        <div id="timeMachine" class="TimeMachineContainer">
+            <div id="timeMachineHeader" class="timeMachineHeader"></div>
+            <div id="undoHistory" class="undo-history"></div>
+        </div>
+
+        <div id="canvas-wrapper" class="canvas-wrapper"></div>
+        <div id="canvas-watcher" class="canvas-watcher"></div>
+
+        <div id="animation-controls" class="animation-controls"></div>
+
+        <a id="image-download-link" href="" download="pixel-art"></a>
+        <a id="document-download-link" href="" download="project.goy"></a>
+
+
+        <input type="file" id="fileChooser"></input>
+
+        <div id="browser-blocker" class="browser-blocker" style="visibility: hidden">
+            <i class="icon-alert"></i>
+            <div class="blocker-info">
+                Unfortunately, Goya uses some HTML features which are not supported by your browser
+                <div class="browser-info" id="browser-info"></div>
+            </div>
+            <div class="blocker-sub-info">
+                Please use a compatible browser for an optimal experience. Apologies for the inconvenience!<br/><br/>
+                <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Chrome version 34 or higher</a><br/>
+                <a href="http://nightly.mozilla.org/" target="_blank">Firefox version 29 or higher</a><br/>
+                <a href="http://www.opera.com/" target="_blank">Opera version 20 or higher</a><br/>
+            <br/>
+            </div>
+        </div>
+
+        <canvas id="preview-canvas" class="preview-canvas"></canvas>
+
+        <div id="keylistener"></div>
+
+
+        <script type="text/javascript" src="./main.js"></script>
+        <script type="text/javascript" src="./browser-check.js"></script>
+        <script type="text/javascript">
+            function preventBackspaceHandler(evt) {
+                evt = evt || window.event;
+                if (evt.keyCode == 8) {
+                    return false;
+                }
+            }
+            document.onkeydown = preventBackspaceHandler;
+        </script>
+    </body>
+</html>
