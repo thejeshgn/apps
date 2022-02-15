@@ -1,0 +1,13 @@
+<svg version="1.1" baseProfile="full" width="172.25" height="208.5" viewbox="0 0 172.25 208.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" style="font:bold  12pt Helvetica, Helvetica, sans-serif;;stroke-linejoin:round;stroke-linecap:round">
+  <desc >[&lt;actor&gt;Sailor] - [&lt;usecase&gt;shiver me;timbers]</desc>
+  <rect x="0" y="0" height="208.5" width="172.25" style="stroke:none; fill:transparent;"></rect>
+  <path d="M86.6 83.5 L86.6 103.5 L86.6 123.5 L86.6 123.5 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <circle r="4" cx="86.6" cy="40.5" data-name="Sailor" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></circle>
+  <path d="M86.6 44.5 L86.6 52.5" data-name="Sailor" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M82.6 48.5 L90.6 48.5" data-name="Sailor" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M82.6 56.5 L86.6 52.5 L90.6 56.5" data-name="Sailor" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="87" y="74" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="Sailor">Sailor</text>
+  <ellipse cx="86.6" cy="152.3" rx="58.125" ry="28.75" data-name="shiver me" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></ellipse>
+  <text x="86.6" y="150.8" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="shiver me">shiver me</text>
+  <text x="86.6" y="165.8" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="shiver me">timbers</text>
+</svg>

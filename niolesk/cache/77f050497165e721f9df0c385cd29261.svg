@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="273px" preserveAspectRatio="none" style="width:279px;height:273px;background:#FFFFFF;" version="1.1" viewBox="0 0 279 273" width="279px" zoomAndPan="magnify"><defs><filter height="300%" id="f8b6ob2x7yycb" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="70" x="24" y="17.0001">Sample_front</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="89" x="5" y="31.4002">192.168.10.0/24</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="74" x="20" y="147.8">Sample_back</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="89" x="5" y="162.2001">192.168.20.0/24</text><rect fill="#DDDDDD" height="44.4001" style="stroke:#DDDDDD;stroke-width:1.0;" width="152" x="109" y="60.1"/><rect fill="#DDDDDD" height="44.4001" style="stroke:#DDDDDD;stroke-width:1.0;" width="144" x="113" y="184.3"/><rect fill="#FEFECE" filter="url(#f8b6ob2x7yycb)" height="5" style="stroke:#A80036;stroke-width:1.0;" width="172" x="99" y="16.9001"/><rect fill="#FEFECE" filter="url(#f8b6ob2x7yycb)" height="5" style="stroke:#A80036;stroke-width:1.0;" width="172" x="99" y="147.7"/><path d="M144,21.9001 L144,65.1 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="9" x="139.5" y="45.4">.1</text><path d="M144,99.5001 L144,147.7 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="9" x="139.5" y="128">.1</text><path d="M230,21.9001 L230,65.1 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="9" x="225.5" y="45.4">.2</text><path d="M230,99.5001 L230,147.7 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="9" x="225.5" y="128">.2</text><path d="M140,152.7 L140,189.3 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="129.5" y="172.8999">.101</text><path d="M226,152.7 L226,189.3 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="215.5" y="172.8999">.102</text><rect fill="#FEFECE" filter="url(#f8b6ob2x7yycb)" height="34.4001" style="stroke:#A80036;stroke-width:1.0;" width="56" x="114" y="65.1"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="36" x="124" y="87.1001">web01</text><rect fill="#FEFECE" filter="url(#f8b6ob2x7yycb)" height="34.4001" style="stroke:#A80036;stroke-width:1.0;" width="56" x="200" y="65.1"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="36" x="210" y="87.1001">web02</text><rect fill="#FEFECE" filter="url(#f8b6ob2x7yycb)" height="34.4001" style="stroke:#A80036;stroke-width:1.0;" width="48" x="118" y="189.3"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="28" x="128" y="211.3">db01</text><rect fill="#FEFECE" filter="url(#f8b6ob2x7yycb)" height="34.4001" style="stroke:#A80036;stroke-width:1.0;" width="48" x="204" y="189.3"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="28" x="214" y="211.3">db02</text><!--MD5=[838c49e7498d4f7c7bf3952f80271204]
+@startuml
+nwdiag {
+  network Sample_front {
+    address = "192.168.10.0/24";
+
+    // define group
+    group web {
+      web01 [address = ".1"];
+      web02 [address = ".2"];
+    }
+  }
+  network Sample_back {
+    address = "192.168.20.0/24";
+    web01 [address = ".1"];
+    web02 [address = ".2"];
+    db01 [address = ".101"];
+    db02 [address = ".102"];
+
+    // define network using defined nodes
+    group db {
+      db01;
+      db02;
+    }
+  }
+}
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 17:25:22 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

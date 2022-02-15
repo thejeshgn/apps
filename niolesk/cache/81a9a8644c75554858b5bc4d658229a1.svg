@@ -1,0 +1,23 @@
+<svg version="1.1" baseProfile="full" width="200.5" height="313.5" viewbox="0 0 200.5 313.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" style="font:bold  12pt Helvetica, Helvetica, sans-serif;;stroke-linejoin:round;stroke-linecap:round">
+  <desc >[&lt;start&gt;st]-&gt;[&lt;state&gt;plunder]
+[plunder]-&gt;[&lt;choice&gt;more loot]
+[more loot]-&gt;[st]
+[more loot] no -&gt;[&lt;end&gt;e]</desc>
+  <rect x="0" y="0" height="313.5" width="200.5" style="stroke:none; fill:transparent;"></rect>
+  <path d="M90.5 57 L66.5 78.5 L66.5 91.8 L66.5 91.8 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M61.2 85.2 L66.5 91.8 L71.8 85.2 L66.5 98.5 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M66.5 129.5 L66.5 149.5 L80.1 164.5 L80.1 164.5 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M71.6 163.2 L80.1 164.5 L79.6 156 L84.5 169.5 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M126.5 169.5 L144.5 149.5 L144.5 114 L144.5 114 L144.5 78.5 L144.5 78.5 L125.5 61.4 L125.5 61.4 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M134 61.9 L125.5 61.4 L126.9 69.8 L120.5 57 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="113.5" y="236" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;">no</text>
+  <path d="M105.5 216 L105.5 236 L105.5 249.3 L105.5 249.3 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M100.2 242.7 L105.5 249.3 L110.8 242.7 L105.5 256 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <circle r="12" cx="105.5" cy="43.5" data-name="st" style="stroke:none; fill:#33322E;"></circle>
+  <rect x="28.5" y="98.5" rx="15.5" ry="15.5" height="31" width="76" data-name="plunder" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="66.5" y="120" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="plunder">plunder</text>
+  <path d="M105.5 169.5 L173.5 192.8 L105.5 216 L38.5 192.8 Z" data-name="more loot" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="106" y="198.8" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="more loot">more loot</text>
+  <circle r="10" cx="105.5" cy="271.5" data-name="e" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></circle>
+  <circle r="6" cx="105.5" cy="271.5" data-name="e" style="stroke:none; fill:#33322E;"></circle>
+</svg>
