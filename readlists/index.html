@@ -1,43 +1,41 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Readlists</title>
-    <!-- This makes the preview yucky -->
-    <!-- <link rel="stylesheet" href="/css/reset.css" /> -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://unpkg.com/normalize.css@7.0.0/normalize.css"
-    /> -->
-    <meta
-      name="description"
-      value="Collect, curate, and bundle individual web pages into an ebook."
-    />
-    <link rel="stylesheet" href="/css/index.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  </head>
-  <body>
-    <div id="root">
-      <img
-        src="/assets/loading.gif"
-        width="36"
-        height="36"
-        style="
-          margin: 30px auto;
-          display: block;
-          width: 36px;
-          align-self: center;
-        "
-      />
-      <noscript>JavaScript is required.</noscript>
-    </div>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <script src="https://unpkg.com/@postlight/mercury-parser@2.2.0/dist/mercury.web.js"></script>
-    <script>
-      window.VERSION = "__VERSION__";
-      window.IS_DEV = window.location.hostname === "localhost";
-    </script>
-    <script type="module" src="/js/index.js"></script>
-  </body>
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/jumbotron-narrow.css">
+
+
+
+<title>Newstream - Stream of News </title>
+
+</head>
+<body>
+ 
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right" role="tablist">
+          <li role="presentation" class="active"><a href="#">Home</a></li>
+          <li role="presentation"><a href="https://thejeshgn.com/tag/readlists/">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">Readlists</h3>
+      </div>      
+        <div id="news_scroll" class="col-lg-12">
+            <div class="list-group">
+              <div class='list-group-item'>
+                <a href="view.html?readlist=paul-miller-offline.json">A story stream from The Verge</a> 
+              </div>
+              <div class='list-group-item'>
+                <a href="view.html?readlist=sri-lankas-economic-crisis.json">Reading List - Sri Lanka's Economic Crisis</a> 
+              </div>              
+            </div>
+        </div>
+        <br>
+        <div >
+        <p>&copy; <a href="http://thejeshgn.com">Thejesh GN</a> 2022</p>
+      </div>
+
+    </div> <!-- /container -->    
+</body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Readlists</title>
+    <!-- This makes the preview yucky -->
+    <!-- <link rel="stylesheet" href="/css/reset.css" /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/normalize.css@7.0.0/normalize.css"
+    /> -->
+    <meta
+      name="description"
+      value="Collect, curate, and bundle individual web pages into an ebook."
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div id="root">
+      <img
+        src="/assets/loading.gif"
+        width="36"
+        height="36"
+        style="
+          margin: 30px auto;
+          display: block;
+          width: 36px;
+          align-self: center;
+        "
+      />
+      <noscript>JavaScript is required.</noscript>
+    </div>
+
+    <script src="https://unpkg.com/@postlight/mercury-parser@2.2.0/dist/mercury.web.js"></script>
+    <script>
+      window.VERSION = "__VERSION__";
+      window.IS_DEV = window.location.hostname === "localhost";
+    </script>
+    <script type="module" src="/js/index.js"></script>
+  </body>
+</html>
