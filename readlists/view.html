@@ -14,7 +14,7 @@
           <li role="presentation"><a href="https://apps.thejeshgn.com/readlists/">Home</a></li>
           <li role="presentation"><a href="https://thejeshgn.com/tag/readlists/">About</a></li>
         </ul>
-        <h3 id="headline" class="text-muted">Chill Factor India News Stream</h3>
+        <h3 id="headline" class="text-muted">Readlists</h3>
       </div>
 
       <div id="description" class="alert alert-info">
@@ -54,13 +54,24 @@ function getParameter() {
 
 function renderItem(val){
   domainFavIconURL ='https://www.google.com/s2/favicons?domain='+val.external_url;
-  rendered_items.push( "<div class='list-group-item'>  <div class='news_item_header'><img  class='news_item_favicon' src='"+domainFavIconURL+"' width=16 height=16/><a href='"+val.external_url+"' target='_blank'>" + val.title + "</a></div> <p> <i>"+val.author['name']+"</i></p> <p class='news_item_description'>"+val.summary+"</p></div>" )
+  let item_content =  "<div class='list-group-item'>"
+  item_content = item_content + "<div class='news_item_header'>"
+  item_content = item_content + "<img  class='news_item_favicon' src='"+domainFavIconURL+"' width=16 height=16/>"
+  item_content = item_content + "<a href='"+val.external_url+"' target='_blank'>" + val.title + "</a>"
+  item_content = item_content + "</div>"
+  item_content = item_content + "<p><i>"+val.author['name']+"</i></p><p class='news_item_description'>"+val.summary+"</p>"
+  item_content = item_content + "</div>"
+
+  rendered_items.push(item_content)
 }
 
 function renderFeed(data){
   document.querySelector("#headline").innerHTML = data.title;
-  description = data.description;
-  description = description + '<br/> This readlist is availabe as <a href="'+url+'"><img width="16px" src="img/jsonfeed.png">JSONFeed</a> for you to import into your favorite reader.';
+  description = "" //"<p>"+data.title+"</p>"
+  description = description + "<p><i>Readlist by:</i> "+ data.author['name'] +"</p>"
+  description = description + "<p>"+data.description+"</p>"
+  description = description + "<br/><br/><p> This readlist is availabe as <a href='"+url+"'><img width='16px' src='img/jsonfeed.png'>JSONFeed</a> for you to import into your favorite reader.</p>";
+
   document.querySelector("#description").innerHTML = description;
 
   data.items.forEach(renderItem);
