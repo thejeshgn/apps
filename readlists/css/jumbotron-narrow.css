@@ -2,6 +2,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -76,23 +77,24 @@ body {
 }
 
 .news_item_header {
-font-weight: bold;
-line-height: 125%;
-margin-bottom: 7px;
-color: #65798D;
+  font-weight: bold;
+  line-height: 125%;
+  font-size: 16px;
+  margin-bottom: 7px;
+  color: #65798D;
 }
 
 .news_item_description {
-margin: 0 0 5px;
-font-size: 0.85em;
-line-height: 135%;
-color: #333;
+  margin: 0 0 5px;
+  font-size: 1.15em;
+  line-height: 135%;
+  color: #333;
 }
 
 .news_item{
-margin-top: 20px;
-padding: 0.5em 0 0;
-margin: 2em 0 0;
+  margin-top: 20px;
+  padding: 0.5em 0 0;
+  margin: 2em 0 0;
 
 }
 
@@ -101,7 +103,7 @@ margin: 2em 0 0;
 }
 
 .news_item_seap{
-  line-height: 125%;
-  margin-bottom: 7px;
-  color: #65798D;
+    line-height: 125%;
+    margin-bottom: 7px;
+    color: #65798D;
 }
