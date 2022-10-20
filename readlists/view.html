@@ -82,7 +82,7 @@ function renderItem(val){
   item_content = item_content + "<img  class='news_item_favicon' src='"+domainFavIconURL+"' width=16 height=16/>"
   item_content = item_content + "<a href='"+val.external_url+"' target='_blank'>" + val.title + "</a>"
   item_content = item_content + "</div><div class='news_item_body'>"
-  item_content = item_content + "<p><i>"+val.author['name']+"</i></p><p class='news_item_description'>"+val.summary+"</p>"
+  item_content = item_content + "<p><i>"+val.author['name']+"</i></p><div class='news_item_description'>"+val.summary+"</div>"
   if ("image" in val){
       item_content = item_content + "<img  class='img-thumbnail rounded' src='"+val["image"]+"' />"
   }
