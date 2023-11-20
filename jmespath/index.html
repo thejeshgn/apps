@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="bootstrap-theme.min.css" />
+      <link rel="stylesheet" href="jmespath.css" type="text/css" />
+    <link rel="stylesheet" href="pygments.css" type="text/css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+    <script type="text/javascript" src="jmespath.min.js"></script>
+    <script type="text/javascript" src="https://jmespath.org/_static/jquery.js"></script>
+
+  <script>
+$(document).ready(function() {
+    $('.jmespath-demo').each(function(i, el) {
+        function evaluateDemo(el) {
+            var expression = $(el).find('.jmespath-expression').val();
+            var inputData = JSON.parse($(el).find('.jmespath-input').val());
+            var result = jmespath.search(inputData, expression);
+            $(el).find('.jmespath-result').text(JSON.stringify(result, null, 2));
+        }
+        $(el).find('.jmespath-expression').bind('keyup', function() {
+            evaluateDemo(el);
+        });
+        $(el).find('.jmespath-input').bind('keyup', function() {
+            evaluateDemo(el);
+        });
+        evaluateDemo(el);
+    });
+    $('.jmespath-form').submit(function() {
+      return false;
+    });
+
+    $('.collapse').on('shown.bs.collapse', function() {
+        $(this).parent().find(".glyphicon-chevron-right").removeClass(
+            "glyphicon-chevron-right").addClass("glyphicon-chevron-down");
+    }).on('hidden.bs.collapse', function(){
+        $(this).parent().find(".glyphicon-chevron-down").removeClass(
+            "glyphicon-chevron-down").addClass("glyphicon-chevron-right");
+    });
+
+})
+</script>
+  <title>jmespath</title>
+</head>
+<body>
+  <a href="https://jmespath.org/tutorial.html"><img id="main-logo" src="logo-dark.png" alt="JMESPath Logo" /></a>
+<div class="jmespath-demo">
+  <div class="row">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <div class="col-md-6 col-md-push-6">
+          <h5>Result</h5>
+          <pre class="jmespath-result"></pre>
+        </div>
+        <div class="col-md-6 col-md-pull-6">
+          <form class="jmespath-form">
+            <div class="left-inner-addon">
+              <span class="glyphicon glyphicon-search"></span>
+              <input class="form-control jmespath-expression"
+                     type="text" placeholder="Expression"
+                     value="" />
+            </div>
+            <textarea class="form-control jmespath-input" rows="40"></textarea>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+Credit: <a href="https://jmespath.org/tutorial.html">JMESPath Tutorial</a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<link rel="stylesheet" href="jotted.css">
+<script src="jotted.js"></script>
+<link rel="stylesheet" href="./bower_components/codemirror/lib/codemirror.css">
+<script src="./bower_components/codemirror/lib/codemirror.js"></script>
+<script src="./bower_components/codemirror/mode/javascript/javascript.js"></script>
+<script src="./bower_components/codemirror/mode/css/css.js"></script>
+<script src="./bower_components/codemirror/mode/xml/xml.js"></script>
+<script src="./bower_components/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<style type="text/css">
+  .jotted {
+    height: 600px;
+  }
+
+</style>
+</head>
+<body>
+
+
+<div id="editor"></div>
+<script>
+  new Jotted(document.querySelector('#editor'), {
+     pane: 'html',
+    files: [{
+      type: 'html',
+      content: "<!DOCTYPE html><html><head><title></title></head><body></body></html>"
+    },{
+      type: 'css',
+      content:""
+    },{
+      type: 'js',
+      content:""
+    }],
+    plugins: [
+       {
+        name: 'play',
+        options: {
+          firstRun: false
+        }
+      },
+      'console',
+      {
+        name: 'codemirror',
+        options: {
+          lineNumbers: true
+        }
+      }
+  ]
+
+
+  })
+</script>
+
+
+
+</body>
+</html>
